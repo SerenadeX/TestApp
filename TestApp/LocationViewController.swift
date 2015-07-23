@@ -17,6 +17,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var locationLabel: UILabel!
   var tableData = [Rep]()
+  var selectedRep: Rep?
   
   var locationManager: CLLocationManager?
   override func viewDidAppear(animated: Bool) {
@@ -77,13 +78,16 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
       
     }
   }
-  
+  var prevZip = "";
   func updateTableWithZip(zip: String) {
-    Requester.getReps(zip, callback: { (error, reps) -> Void in
-      self.tableData = reps
-      println(reps)
-      self.tableView.reloadData()
-    })
+    if zip != prevZip {
+      Requester.getReps(zip, callback: { (error, reps) -> Void in
+        self.tableData = reps
+        println(reps)
+        self.tableView.reloadData()
+        self.prevZip = zip
+      })
+    }
   }
   
   func updateLocationString(location: CLLocation) {
@@ -99,6 +103,17 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
     }
   }
   
+  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    selectedRep = tableData[indexPath.item]
+    performSegueWithIdentifier("detailShowFromLoc", sender: self)
+  }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    let dest = segue.destinationViewController as! RepViewController
+    dest.rep = selectedRep
+    println(dest.rep!.name!)
+  }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("repCell") as! RepCell

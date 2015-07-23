@@ -35,7 +35,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="SSH-Sh-Yc0" kind="show" identifier="senatorShow" id="P4G-zx-cXR"/>
+                                    <segue destination="SSH-Sh-Yc0" kind="show" identifier="senShow" id="P4G-zx-cXR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4C-4t-XyU">
@@ -64,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1035" y="1076"/>
+            <point key="canvasLocation" x="935" y="1016"/>
         </scene>
         <!--Name And State View Controller-->
         <scene sceneID="YsG-aH-IMA">
@@ -104,15 +104,29 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="repCell" id="D0v-iB-stG">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="repCell" id="D0v-iB-stG" customClass="RepCell" customModule="TestApp" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D0v-iB-stG" id="qvd-7k-BSS">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZn-Ev-3Jp">
+                                                    <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="xZn-Ev-3Jp" firstAttribute="leading" secondItem="qvd-7k-BSS" secondAttribute="leadingMargin" id="D8f-KK-YYa"/>
+                                                <constraint firstItem="xZn-Ev-3Jp" firstAttribute="top" secondItem="qvd-7k-BSS" secondAttribute="topMargin" constant="3" id="eGB-bn-QE6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="xZn-Ev-3Jp" secondAttribute="bottom" constant="3" id="nwb-kF-863"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <segue destination="arq-Ad-XAz" kind="show" identifier="detailShowFromRep" id="uPO-KW-ppx"/>
+                                            <outlet property="mainLabel" destination="xZn-Ev-3Jp" id="hUm-Ix-Saa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -143,6 +157,9 @@
                                 <state key="normal" title="Search">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="searchName:" destination="SSH-Sh-Yc0" eventType="touchUpInside" id="2cW-sz-geG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -172,6 +189,7 @@
                         <outlet property="selectStateButton" destination="kkz-HT-SNL" id="46d-cS-UHe"/>
                         <outlet property="startSearchButton" destination="q66-H6-HAD" id="beV-Ag-eSN"/>
                         <outlet property="tableView" destination="Dwr-Ul-Xx6" id="W0T-Jp-wIb"/>
+                        <segue destination="arq-Ad-XAz" kind="show" identifier="detailShowFromNameAndState" id="Jjv-bI-zn6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnf-DQ-YbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -280,6 +298,14 @@
                             <constraint firstItem="hnO-Ce-5ie" firstAttribute="centerX" secondItem="NOr-h7-AnB" secondAttribute="centerX" id="lgl-qx-qil"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="districtLabel" destination="mAj-RP-JX6" id="ibq-lG-Hw9"/>
+                        <outlet property="nameLabel" destination="lis-vC-w4d" id="yO4-NC-iqz"/>
+                        <outlet property="officeLabel" destination="hnO-Ce-5ie" id="3vb-wp-5lf"/>
+                        <outlet property="partyLabel" destination="2SO-w1-dgI" id="6dW-w8-329"/>
+                        <outlet property="phoneLabel" destination="NOr-h7-AnB" id="MTz-Mt-W4Z"/>
+                        <outlet property="stateLabel" destination="KCF-ER-Vz0" id="xxS-Z0-SYV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cha-2J-xcr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -297,22 +323,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2zi-2w-9BL">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2zi-2w-9BL">
                                 <rect key="frame" x="0.0" y="58" width="600" height="542"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mC7-Ap-HHL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mC7-Ap-HHL">
                                 <rect key="frame" x="538" y="20" width="40" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Close">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="closeMe:" destination="uBt-NU-j4p" eventType="touchUpInside" id="mkh-69-3oh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2zi-2w-9BL" firstAttribute="top" secondItem="P77-8B-TqC" secondAttribute="bottom" constant="38" id="7UG-5I-Hqz"/>
+                            <constraint firstItem="mC7-Ap-HHL" firstAttribute="top" secondItem="P77-8B-TqC" secondAttribute="bottom" id="8nA-kd-48m"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2zi-2w-9BL" secondAttribute="trailing" constant="-16" id="Fgk-91-Ftk"/>
+                            <constraint firstItem="hLK-O6-CPS" firstAttribute="top" secondItem="2zi-2w-9BL" secondAttribute="bottom" id="LCf-2W-ExG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mC7-Ap-HHL" secondAttribute="trailing" constant="6" id="LRU-EW-JJ0"/>
+                            <constraint firstItem="2zi-2w-9BL" firstAttribute="leading" secondItem="H18-dY-ZqD" secondAttribute="leadingMargin" constant="-16" id="LVh-Wp-rOy"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="2zi-2w-9BL" id="ly6-Ql-b8c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y4d-QI-ulW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -352,7 +392,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="repCell" id="OvB-zw-aK1" customClass="RepCell" customModule="TestApp" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="repCell" id="OvB-zw-aK1" customClass="RepCell" customModule="TestApp" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OvB-zw-aK1" id="WcW-Op-sS3">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -375,7 +415,6 @@
                                         <animations/>
                                         <connections>
                                             <outlet property="mainLabel" destination="yvo-Ab-8JS" id="hYM-J8-IoK"/>
-                                            <segue destination="arq-Ad-XAz" kind="show" identifier="detailShowFromLoc" id="Ccx-dR-Y79"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -403,6 +442,7 @@
                         <outlet property="locationLabel" destination="GDb-pT-x7y" id="aNm-6L-Iuq"/>
                         <outlet property="mapView" destination="v14-g4-PKR" id="NPH-OM-cpt"/>
                         <outlet property="tableView" destination="ZJF-C4-9za" id="9PH-94-0Dz"/>
+                        <segue destination="arq-Ad-XAz" kind="show" identifier="detailShowFromLoc" id="Hg0-Rz-Uii"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Di-PL-MtX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -430,7 +470,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gaN-rD-9ex"/>
-        <segue reference="Ccx-dR-Y79"/>
+        <segue reference="P4G-zx-cXR"/>
+        <segue reference="Jjv-bI-zn6"/>
     </inferredMetricsTieBreakers>
 </document>

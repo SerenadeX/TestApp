@@ -19,6 +19,9 @@ class Requester {
   
   
   static func sendRequest(url: NSURL, callback: ((error: NSError!, reps: [Rep]) -> Void)) {
+    
+    NetworkStack.increment()
+    
     func nsToSwift(ns: NSDictionary) -> Dictionary<String, [Rep]> {
       var dict = Dictionary<String, [Rep]>()
       let arr = ns.valueForKey("results") as! NSArray
@@ -38,6 +41,10 @@ class Requester {
             r.phone = value as? String
           case "party":
             r.party = value as? String
+          case "district":
+            r.district = value as? String
+          case "link":
+            r.website = NSURL(string: (value as! String))
           default:
             break
           }
@@ -58,12 +65,30 @@ class Requester {
     
     let req = NSURLRequest(URL: url)
 
+    
+    
     NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue.mainQueue()) { (res, data, err) -> Void in
-      println(res)
-      let parsed = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as! NSDictionary
+      if err != nil {
+        NetworkStack.decrement()
+        callback(error: err, reps: [Rep]())
+        return
+      }
+      let parsed = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as? NSDictionary
+      
+      if let p = parsed {
+        let swiftly = nsToSwift(p)
+        NetworkStack.decrement()
+        callback(error: err, reps: swiftly["results"]!)
+      } else {
+        println(data)
+        println(parsed)
+        NetworkStack.decrement()
+        callback(error: NSError(), reps: [Rep]())
+      }
+      
+      
 
-      let swiftly = nsToSwift(parsed)
-      callback(error: err, reps: swiftly["results"]!)
+
     }
     
   }
@@ -81,7 +106,8 @@ class Requester {
     
     
     
-    let url = NSURL(string: "\(host)/get_\(typeString)_byname.php?name=\(name)&output=json")!
+    let url = NSURL(string: "\(host)/getall_\(typeString)_byname.php?name=\(name)&output=json")!
+    println(url.description)
     Requester.sendRequest(url, callback: callback)
     
     
@@ -97,7 +123,7 @@ class Requester {
     
     
     
-    let url = NSURL(string: "\(host)/get_\(typeString)_bystate.php?name=\(state.rawValue)&output=json")!
+    let url = NSURL(string: "\(host)/getall_\(typeString)_bystate.php?name=\(state.rawValue)&output=json")!
     Requester.sendRequest(url, callback: callback)
   }
   

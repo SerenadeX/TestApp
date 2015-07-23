@@ -17,7 +17,8 @@ class NameAndStateViewController: UIViewController, UITableViewDelegate, UITable
   @IBOutlet weak var searchField: UITextField!
   @IBOutlet weak var segmentedSelector: UISegmentedControl!
   
-
+  var isSenator = false
+  var tableData = [Rep]()
   
   
   @IBAction func switchStuff(sender: AnyObject) {
@@ -36,12 +37,48 @@ class NameAndStateViewController: UIViewController, UITableViewDelegate, UITable
     
   }
   
+  
+
+  @IBAction func searchName(sender: AnyObject) {
+    let name = searchField.text
+    var type: RepType?
+    if isSenator {
+      type = .Senator
+    } else {
+      type = .Representative
+    }
+    
+    Requester.getReps(type!, name: name) { (error, reps) -> Void in
+      if error == nil {
+        self.tableData = reps
+        self.tableView.reloadData()
+      }
+    }
+    
+  }
+  
+  var selectedRep: Rep?
+  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    selectedRep = tableData[indexPath.item]
+    performSegueWithIdentifier("detailShowFromNameAndState", sender: self)
+  }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    let dest = segue.destinationViewController as! RepViewController
+    dest.rep = selectedRep
+    println(dest.rep!.name!)
+  }
+  
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 0
+    return tableData.count
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    return tableView.dequeueReusableCellWithIdentifier("repCell") as! UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("repCell") as! RepCell
+    cell.rep = tableData[indexPath.item]
+    cell.mainLabel.text = "\(cell.rep!.name!) – \(cell.rep!.party!)"
+    return cell
   }
   
 }

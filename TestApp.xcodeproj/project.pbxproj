@@ -10,6 +10,7 @@
 		595758131B61444D0022063E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 595758121B61444D0022063E /* CoreLocation.framework */; };
 		595758151B6149020022063E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 595758141B6149020022063E /* MapKit.framework */; };
 		59A59F4B1B6180F900A6EF4E /* RepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A59F4A1B6180F900A6EF4E /* RepCell.swift */; };
+		59A59F4D1B619A7100A6EF4E /* NetworkStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A59F4C1B619A7100A6EF4E /* NetworkStack.swift */; };
 		59C53F6D1B6155F400C2F3C4 /* Rep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C53F6C1B6155F400C2F3C4 /* Rep.swift */; };
 		59C53F6F1B61612D00C2F3C4 /* Requester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C53F6E1B61612D00C2F3C4 /* Requester.swift */; };
 		59E04FF41B61261800C1203C /* NameAndStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E04FF31B61261800C1203C /* NameAndStateViewController.swift */; };
@@ -39,6 +40,7 @@
 		595758121B61444D0022063E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		595758141B6149020022063E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		59A59F4A1B6180F900A6EF4E /* RepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepCell.swift; sourceTree = "<group>"; };
+		59A59F4C1B619A7100A6EF4E /* NetworkStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkStack.swift; sourceTree = "<group>"; };
 		59C53F6C1B6155F400C2F3C4 /* Rep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rep.swift; sourceTree = "<group>"; };
 		59C53F6E1B61612D00C2F3C4 /* Requester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requester.swift; sourceTree = "<group>"; };
 		59C53F701B61653100C2F3C4 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				59C53F6E1B61612D00C2F3C4 /* Requester.swift */,
 				59C53F701B61653100C2F3C4 /* MyPlayground.playground */,
 				59A59F4A1B6180F900A6EF4E /* RepCell.swift */,
+				59A59F4C1B619A7100A6EF4E /* NetworkStack.swift */,
 			);
 			path = TestApp;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				59E04FF81B61268400C1203C /* RepViewController.swift in Sources */,
 				59E04FFA1B6126C900C1203C /* BrowserViewController.swift in Sources */,
 				59C53F6F1B61612D00C2F3C4 /* Requester.swift in Sources */,
+				59A59F4D1B619A7100A6EF4E /* NetworkStack.swift in Sources */,
 				59E04FF61B61265700C1203C /* LocationViewController.swift in Sources */,
 				59C53F6D1B6155F400C2F3C4 /* Rep.swift in Sources */,
 				59FD3EF21B604D2A00E0F003 /* README.md in Sources */,

@@ -20,7 +20,8 @@ class Rep {
   var office: String?
   var party: String?
   var state: String?
-  
+  var district: String?
+  var website: NSURL?
   
   func initWithDict(dict: Dictionary<String, String>) {
     

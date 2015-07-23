@@ -20,6 +20,23 @@ class ViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
 
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
+    func destIsSenator(valid: Bool) {
+      let d = segue.destinationViewController as! NameAndStateViewController
+      d.isSenator = valid
+    }
+    
+    
+    switch segue.identifier! {
+    case "repShow":
+      destIsSenator(false)
+    case "senShow":
+      destIsSenator(true)
+    default:
+      break
+    }
+  }
 
 }
 
