@@ -1,5 +1,5 @@
 //
-//  LocationViewController.swift
+//  RepCell.swift
 //  TestApp
 //
 //  Created by Rhett Rogers on 7/23/15.
@@ -8,6 +8,9 @@
 
 import UIKit
 
-class LocationViewController: UIViewController {
+
+class RepCell: UITableViewCell {
   
+  @IBOutlet weak var mainLabel: UILabel!
+  var rep: Rep?
 }
