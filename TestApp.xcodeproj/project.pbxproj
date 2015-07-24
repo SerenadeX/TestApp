@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5933E0D51B62124F0070DF8A /* iOSVersions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E0D41B62124F0070DF8A /* iOSVersions.swift */; };
 		595758131B61444D0022063E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 595758121B61444D0022063E /* CoreLocation.framework */; };
 		595758151B6149020022063E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 595758141B6149020022063E /* MapKit.framework */; };
 		59A59F4B1B6180F900A6EF4E /* RepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A59F4A1B6180F900A6EF4E /* RepCell.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5933E0D41B62124F0070DF8A /* iOSVersions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSVersions.swift; sourceTree = "<group>"; };
 		595758121B61444D0022063E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		595758141B6149020022063E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		59A59F4A1B6180F900A6EF4E /* RepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepCell.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				59C53F701B61653100C2F3C4 /* MyPlayground.playground */,
 				59A59F4A1B6180F900A6EF4E /* RepCell.swift */,
 				59A59F4C1B619A7100A6EF4E /* NetworkStack.swift */,
+				5933E0D41B62124F0070DF8A /* iOSVersions.swift */,
 			);
 			path = TestApp;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				59E04FFA1B6126C900C1203C /* BrowserViewController.swift in Sources */,
 				59C53F6F1B61612D00C2F3C4 /* Requester.swift in Sources */,
 				59A59F4D1B619A7100A6EF4E /* NetworkStack.swift in Sources */,
+				5933E0D51B62124F0070DF8A /* iOSVersions.swift in Sources */,
 				59E04FF61B61265700C1203C /* LocationViewController.swift in Sources */,
 				59C53F6D1B6155F400C2F3C4 /* Rep.swift in Sources */,
 				59FD3EF21B604D2A00E0F003 /* README.md in Sources */,

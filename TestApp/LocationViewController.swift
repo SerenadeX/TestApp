@@ -26,12 +26,14 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
     let status = CLLocationManager.authorizationStatus()
     locationManager!.delegate = self
     
-    if status == .NotDetermined {
-      locationManager!.requestWhenInUseAuthorization()
-    }
-    if status == .Denied || status == .Restricted {
-      println("restricted")
-      return
+    if iOS8 {
+      if status == .NotDetermined {
+        locationManager!.requestWhenInUseAuthorization()
+      }
+      if status == .Denied || status == .Restricted {
+        println("restricted")
+        return
+      }
     }
     
     
