@@ -13,6 +13,7 @@
 		596C62E31B64062E00AB5C1B /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596C62E21B64062E00AB5C1B /* States.swift */; };
 		596C62E51B642EEB00AB5C1B /* popoverPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 596C62E41B642EEB00AB5C1B /* popoverPicker.xib */; };
 		596C62E71B64349F00AB5C1B /* PopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596C62E61B64349F00AB5C1B /* PopoverController.swift */; };
+		596C62EA1B64467A00AB5C1B /* OpenInSafariActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596C62E91B64467A00AB5C1B /* OpenInSafariActivity.swift */; };
 		59A59F4B1B6180F900A6EF4E /* RepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A59F4A1B6180F900A6EF4E /* RepCell.swift */; };
 		59A59F4D1B619A7100A6EF4E /* NetworkStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A59F4C1B619A7100A6EF4E /* NetworkStack.swift */; };
 		59C53F6D1B6155F400C2F3C4 /* Rep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C53F6C1B6155F400C2F3C4 /* Rep.swift */; };
@@ -46,6 +47,7 @@
 		596C62E21B64062E00AB5C1B /* States.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
 		596C62E41B642EEB00AB5C1B /* popoverPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = popoverPicker.xib; sourceTree = "<group>"; };
 		596C62E61B64349F00AB5C1B /* PopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverController.swift; sourceTree = "<group>"; };
+		596C62E91B64467A00AB5C1B /* OpenInSafariActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenInSafariActivity.swift; sourceTree = "<group>"; };
 		59A59F4A1B6180F900A6EF4E /* RepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepCell.swift; sourceTree = "<group>"; };
 		59A59F4C1B619A7100A6EF4E /* NetworkStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkStack.swift; sourceTree = "<group>"; };
 		59C53F6C1B6155F400C2F3C4 /* Rep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rep.swift; sourceTree = "<group>"; };
@@ -88,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		596C62E81B64466000AB5C1B /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				596C62E91B64467A00AB5C1B /* OpenInSafariActivity.swift */,
+			);
+			name = Activities;
+			sourceTree = "<group>";
+		};
 		59E04FFB1B6126E200C1203C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +134,7 @@
 		59FD3ECC1B604BB300E0F003 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				596C62E81B64466000AB5C1B /* Activities */,
 				59FD3EF11B604D2A00E0F003 /* README.md */,
 				59FD3ECF1B604BB300E0F003 /* AppDelegate.swift */,
 				59E04FFB1B6126E200C1203C /* Controllers */,
@@ -284,6 +295,7 @@
 				596C62E71B64349F00AB5C1B /* PopoverController.swift in Sources */,
 				59C53F6D1B6155F400C2F3C4 /* Rep.swift in Sources */,
 				59FD3ED21B604BB300E0F003 /* ViewController.swift in Sources */,
+				596C62EA1B64467A00AB5C1B /* OpenInSafariActivity.swift in Sources */,
 				59A59F4B1B6180F900A6EF4E /* RepCell.swift in Sources */,
 				59E04FF41B61261800C1203C /* NameAndStateViewController.swift in Sources */,
 				596C62E31B64062E00AB5C1B /* States.swift in Sources */,

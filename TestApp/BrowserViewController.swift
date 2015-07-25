@@ -11,8 +11,9 @@ import UIKit
 
 class BrowserViewController: UIViewController, UIWebViewDelegate {
   var url: NSURL?
-
+  var activityView: UIActivityViewController?
   
+  @IBOutlet weak var shareButton: UIButton!
   
   
   @IBOutlet weak var webView: UIWebView!
@@ -21,13 +22,34 @@ class BrowserViewController: UIViewController, UIWebViewDelegate {
     let req = NSMutableURLRequest()
     req.URL = url
     
+
+    
+    
+    
+    activityView = UIActivityViewController(activityItems: [url!], applicationActivities: [OpenInSafariActivity()])
+    activityView?.popoverPresentationController?.sourceRect = shareButton.bounds
+    activityView?.popoverPresentationController?.sourceView = shareButton
+    
+    
     webView.delegate = self
     webView.loadRequest(req)
     
   }
+
+  
+  
+  @IBAction func showShareSheet(sender: AnyObject) {
+    
+    activityView?.popoverPresentationController?.sourceRect = shareButton.bounds
+    activityView?.popoverPresentationController?.sourceView = shareButton
+    
+    presentViewController(activityView!, animated: true, completion: nil)
+  }
   
   func webViewDidStartLoad(webView: UIWebView) {
     NetworkStack.increment()
+
+
   }
   
   func webViewDidFinishLoad(webView: UIWebView) {
