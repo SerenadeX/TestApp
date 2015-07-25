@@ -13,7 +13,6 @@ class BrowserViewController: UIViewController, UIWebViewDelegate {
   var url: NSURL?
 
   
-  var finished = false
   
   
   @IBOutlet weak var webView: UIWebView!
@@ -29,18 +28,15 @@ class BrowserViewController: UIViewController, UIWebViewDelegate {
   
   func webViewDidStartLoad(webView: UIWebView) {
     NetworkStack.increment()
-    finished = false
   }
   
   func webViewDidFinishLoad(webView: UIWebView) {
-    NetworkStack.decrement()
-    finished = true
+    NetworkStack.kill()
+
   }
   
   @IBAction func closeMe(sender: AnyObject) {
-    if !finished {
-      NetworkStack.decrement()
-    }
+    NetworkStack.kill()
     self.dismissViewControllerAnimated(true, completion: nil)
   }
 }

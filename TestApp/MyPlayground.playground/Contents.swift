@@ -1,12 +1,2 @@
-//: Playground - noun: a place where people can play
+var num = 5
 
-import Cocoa
-
-var str = "Hello, playground"
-
-
-enum State: String {
-  case UT = "UT", AZ = "AZ"
-}
-
-"\(State.UT.rawValue)"

@@ -26,5 +26,10 @@ class NetworkStack {
     }
   }
   
+  static func kill() {
+    stack = 0
+    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+  }
+  
   
 }

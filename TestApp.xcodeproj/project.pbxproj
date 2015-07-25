@@ -10,6 +10,9 @@
 		5933E0D51B62124F0070DF8A /* iOSVersions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E0D41B62124F0070DF8A /* iOSVersions.swift */; };
 		595758131B61444D0022063E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 595758121B61444D0022063E /* CoreLocation.framework */; };
 		595758151B6149020022063E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 595758141B6149020022063E /* MapKit.framework */; };
+		596C62E31B64062E00AB5C1B /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596C62E21B64062E00AB5C1B /* States.swift */; };
+		596C62E51B642EEB00AB5C1B /* popoverPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 596C62E41B642EEB00AB5C1B /* popoverPicker.xib */; };
+		596C62E71B64349F00AB5C1B /* PopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596C62E61B64349F00AB5C1B /* PopoverController.swift */; };
 		59A59F4B1B6180F900A6EF4E /* RepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A59F4A1B6180F900A6EF4E /* RepCell.swift */; };
 		59A59F4D1B619A7100A6EF4E /* NetworkStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A59F4C1B619A7100A6EF4E /* NetworkStack.swift */; };
 		59C53F6D1B6155F400C2F3C4 /* Rep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C53F6C1B6155F400C2F3C4 /* Rep.swift */; };
@@ -24,7 +27,6 @@
 		59FD3ED71B604BB300E0F003 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59FD3ED61B604BB300E0F003 /* Images.xcassets */; };
 		59FD3EDA1B604BB300E0F003 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59FD3ED81B604BB300E0F003 /* LaunchScreen.xib */; };
 		59FD3EE61B604BB300E0F003 /* TestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FD3EE51B604BB300E0F003 /* TestAppTests.swift */; };
-		59FD3EF21B604D2A00E0F003 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 59FD3EF11B604D2A00E0F003 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,9 @@
 		5933E0D41B62124F0070DF8A /* iOSVersions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSVersions.swift; sourceTree = "<group>"; };
 		595758121B61444D0022063E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		595758141B6149020022063E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		596C62E21B64062E00AB5C1B /* States.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
+		596C62E41B642EEB00AB5C1B /* popoverPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = popoverPicker.xib; sourceTree = "<group>"; };
+		596C62E61B64349F00AB5C1B /* PopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverController.swift; sourceTree = "<group>"; };
 		59A59F4A1B6180F900A6EF4E /* RepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepCell.swift; sourceTree = "<group>"; };
 		59A59F4C1B619A7100A6EF4E /* NetworkStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkStack.swift; sourceTree = "<group>"; };
 		59C53F6C1B6155F400C2F3C4 /* Rep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rep.swift; sourceTree = "<group>"; };
@@ -91,6 +96,7 @@
 				59E04FF51B61265700C1203C /* LocationViewController.swift */,
 				59E04FF71B61268400C1203C /* RepViewController.swift */,
 				59E04FF91B6126C900C1203C /* BrowserViewController.swift */,
+				596C62E61B64349F00AB5C1B /* PopoverController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -131,6 +137,8 @@
 				59A59F4A1B6180F900A6EF4E /* RepCell.swift */,
 				59A59F4C1B619A7100A6EF4E /* NetworkStack.swift */,
 				5933E0D41B62124F0070DF8A /* iOSVersions.swift */,
+				596C62E21B64062E00AB5C1B /* States.swift */,
+				596C62E41B642EEB00AB5C1B /* popoverPicker.xib */,
 			);
 			path = TestApp;
 			sourceTree = "<group>";
@@ -249,6 +257,7 @@
 				59FD3ED51B604BB300E0F003 /* Main.storyboard in Resources */,
 				59FD3EDA1B604BB300E0F003 /* LaunchScreen.xib in Resources */,
 				59FD3ED71B604BB300E0F003 /* Images.xcassets in Resources */,
+				596C62E51B642EEB00AB5C1B /* popoverPicker.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,11 +281,12 @@
 				59A59F4D1B619A7100A6EF4E /* NetworkStack.swift in Sources */,
 				5933E0D51B62124F0070DF8A /* iOSVersions.swift in Sources */,
 				59E04FF61B61265700C1203C /* LocationViewController.swift in Sources */,
+				596C62E71B64349F00AB5C1B /* PopoverController.swift in Sources */,
 				59C53F6D1B6155F400C2F3C4 /* Rep.swift in Sources */,
-				59FD3EF21B604D2A00E0F003 /* README.md in Sources */,
 				59FD3ED21B604BB300E0F003 /* ViewController.swift in Sources */,
 				59A59F4B1B6180F900A6EF4E /* RepCell.swift in Sources */,
 				59E04FF41B61261800C1203C /* NameAndStateViewController.swift in Sources */,
+				596C62E31B64062E00AB5C1B /* States.swift in Sources */,
 				59FD3ED01B604BB300E0F003 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
