@@ -46,11 +46,6 @@ class Requester {
           default:
             break
           }
-          
-          
-          
-          
-          println("\(key) \(value)")
         }
         results.append(r)
 
@@ -78,8 +73,6 @@ class Requester {
         NetworkStack.decrement()
         callback(error: err, reps: swiftly["results"]!)
       } else {
-        println(data)
-        println(parsed)
         NetworkStack.decrement()
         callback(error: NSError(), reps: [Rep]())
       }
@@ -105,7 +98,7 @@ class Requester {
     
     
     let url = NSURL(string: "\(host)/getall_\(typeString)_byname.php?name=\(name)&output=json")!
-    println(url.description)
+
     Requester.sendRequest(url, callback: callback)
     
     

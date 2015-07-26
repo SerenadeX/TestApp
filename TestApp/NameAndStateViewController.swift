@@ -141,7 +141,7 @@ class NameAndStateViewController: UIViewController, UITableViewDelegate, UITable
   
   func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     selectedStateValue = stateStrings[row]
-    println(selectedStateValue)
+
   }
   
   
@@ -190,7 +190,7 @@ class NameAndStateViewController: UIViewController, UITableViewDelegate, UITable
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     let dest = segue.destinationViewController as! RepViewController
     dest.rep = selectedRep
-    println(dest.rep!.name!)
+
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

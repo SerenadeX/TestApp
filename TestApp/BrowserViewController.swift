@@ -25,11 +25,13 @@ class BrowserViewController: UIViewController, UIWebViewDelegate {
 
     
     
-    
-    activityView = UIActivityViewController(activityItems: [url!], applicationActivities: [OpenInSafariActivity()])
-    activityView?.popoverPresentationController?.sourceRect = shareButton.bounds
-    activityView?.popoverPresentationController?.sourceView = shareButton
-    
+    if !iOS7 {
+      activityView = UIActivityViewController(activityItems: [url!], applicationActivities: [OpenInSafariActivity()])
+      activityView?.popoverPresentationController?.sourceRect = shareButton.bounds
+      activityView?.popoverPresentationController?.sourceView = shareButton
+    } else {
+      shareButton.hidden = true
+    }
     
     webView.delegate = self
     webView.loadRequest(req)
@@ -39,11 +41,12 @@ class BrowserViewController: UIViewController, UIWebViewDelegate {
   
   
   @IBAction func showShareSheet(sender: AnyObject) {
-    
-    activityView?.popoverPresentationController?.sourceRect = shareButton.bounds
-    activityView?.popoverPresentationController?.sourceView = shareButton
-    
-    presentViewController(activityView!, animated: true, completion: nil)
+    if !iOS7 {
+      activityView?.popoverPresentationController?.sourceRect = shareButton.bounds
+      activityView?.popoverPresentationController?.sourceView = shareButton
+      
+      presentViewController(activityView!, animated: true, completion: nil)
+    }
   }
   
   func webViewDidStartLoad(webView: UIWebView) {

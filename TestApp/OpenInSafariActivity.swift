@@ -19,7 +19,6 @@ class OpenInSafariActivity: UIActivity {
   }
   
   override func canPerformWithActivityItems(activityItems: [AnyObject]) -> Bool {
-    println("ran can")
     return true
   }
   

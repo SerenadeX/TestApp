@@ -85,7 +85,6 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITab
     if zip != prevZip {
       Requester.getReps(zip, callback: { (error, reps) -> Void in
         self.tableData = reps
-        println(reps)
         self.tableView.reloadData()
         self.prevZip = zip
       })
