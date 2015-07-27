@@ -55,22 +55,12 @@ class NameAndStateViewController: UIViewController, UITableViewDelegate, UITable
       popover!.setPopoverContentSize(picker!.bounds.size, animated: true)
       popover?.delegate = self
 
-//      popover!.view = UIView(frame: CGRect(x: 0, y: 0, width: pickerWidth!, height: picker!.bounds.height))
-      
-      //      let rect = CGRect(origin: selectStateButton.bounds.origin, size: CGSize(width: picker!.bounds.width, height: picker!.bounds.height))
-      //      popover?.view.bou
 
     }
   }
   
   func setupPopover() {
     
-    
-//    popover!.popoverPresentationController!.sourceView = selectStateButton
-//    popover!.popoverPresentationController?.sourceRect = CGRect(x: 0, y: 0, width: picker!.bounds.width, height: picker!.bounds.height)
-//    popover!.view.bounds.origin.y += 30
-//    popover!.view.bounds.size.width = picker!.bounds.width
-//    popover!.view.bounds.size.height = picker!.bounds.height
   }
   
   
@@ -84,8 +74,8 @@ class NameAndStateViewController: UIViewController, UITableViewDelegate, UITable
       selectStateButton.hidden = false
       startSearchButton.hidden = true
       searchField.hidden = true
+      view.endEditing(true)
     }
-    
     
     
   }
@@ -95,6 +85,11 @@ class NameAndStateViewController: UIViewController, UITableViewDelegate, UITable
     
     if selectStateButton.currentTitle != "Done" && !isIpad {
       selectStateButton.setTitle("Done", forState: .Normal)
+      
+      if selectedStateValue == "" {
+        selectedStateValue = stateStrings[0]
+      }
+      
       UIView.beginAnimations("picker", context: nil)
       UIView.setAnimationDuration(0.5)
       picker?.transform = CGAffineTransformMakeTranslation(0, -236)
@@ -102,7 +97,6 @@ class NameAndStateViewController: UIViewController, UITableViewDelegate, UITable
     } else if isIpad {
       setupPopover()
       popover?.presentPopoverFromRect(sender.bounds, inView: sender, permittedArrowDirections: UIPopoverArrowDirection.Up, animated: true)
-//      presentViewController(popover!, animated: true, completion: nil)
     } else {
       dismissState(selectStateButton)
     }

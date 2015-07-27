@@ -97,9 +97,12 @@ class Requester {
     
     
     
-    let url = NSURL(string: "\(host)/getall_\(typeString)_byname.php?name=\(name)&output=json")!
-
-    Requester.sendRequest(url, callback: callback)
+    let url = NSURL(string: "\(host)/getall_\(typeString)_byname.php?name=\(name)&output=json")
+    if let u = url {
+      Requester.sendRequest(u, callback: callback)
+    } else {
+      Alert.alert("Please put in only one name.")
+    }
     
     
   }
